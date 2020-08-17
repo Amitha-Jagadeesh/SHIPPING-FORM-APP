@@ -88,6 +88,8 @@
 /* 0 */
 /***/ (function(module, exports) {
 
+var _this = this;
+
 $(document).ready(function () {
   $("#slick").ddslick({
     width: "33%",
@@ -95,7 +97,7 @@ $(document).ready(function () {
   });
   $("#shippingCountry").msDropdown();
   $('#firstname, #lastname, #email, #mobile, #addressLine1, #postcode, #city').change(function () {
-    var errElementSelctor = '#' + $(this).attr('id') + 'Error';
+    var errElementSelctor = '#' + $(_this).attr('id') + 'Error';
     $(errElementSelctor).hide();
   });
   $("form").submit(function (event) {
@@ -117,17 +119,21 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       dataType: "json",
       contentType: "application/json;charset=utf-8",
+      beforeSend: function beforeSend() {
+        $(".error-display").hide();
+      },
       success: function success(data) {
-        $("form").reset();
+        $("#registrationForm")[0].reset();
         alert("customer data stored successfully");
         return true;
       },
       error: function error(data) {
         var errorData = JSON.parse(data.responseText);
+        var errElementSelctor = '';
 
         if (errorData.field) {
           // Displays the field duplicate error if email or phone number are already present in DB
-          var errElementSelctor = '#' + errorData.field + 'Error';
+          errElementSelctor = '#' + errorData.field + 'Error';
 
           if (errorData.field === 'email' || errorData.field === 'mobile') {
             $(errElementSelctor).show();
@@ -138,7 +144,7 @@ $(document).ready(function () {
         } else {
           errorData.forEach(function (error) {
             // Displays validation error returned from server 
-            var errElementSelctor = '#' + error.param + 'Error';
+            errElementSelctor = '#' + error.param + 'Error';
             $(errElementSelctor).show();
             $(errElementSelctor).html(error.msg);
           });

@@ -76,7 +76,7 @@ const shippingFormSchema = new Schema({
 
 
 // To send custom error message when there is duplicate email or mobile number 
-shippingFormSchema.post('save', function(error, doc, next) {
+shippingFormSchema.post('save', (error, doc, next) =>{
     if (error.name === 'MongoError' && error.code === 11000 && error.keyPattern.email === 1) {
       next(ErrorMsg={
                 field:'email',

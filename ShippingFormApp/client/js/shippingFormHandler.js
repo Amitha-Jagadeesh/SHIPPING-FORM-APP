@@ -1,22 +1,22 @@
 
-$(document).ready(function () {
+$(document).ready(()=> {
 
     $("#slick").ddslick({
         width: "33%",
         imagePosition: "left",
-    })
+    });
 
     $("#shippingCountry").msDropdown();
 
-    $('#firstname, #lastname, #email, #mobile, #addressLine1, #postcode, #city').change(function () {
-        var errElementSelctor = '#' + $(this).attr('id') + 'Error';
+    $('#firstname, #lastname, #email, #mobile, #addressLine1, #postcode, #city').change(()=>{
+        const errElementSelctor = '#' + $(this).attr('id') + 'Error';
         $(errElementSelctor).hide();
     });
 
-    $("form").submit(function (event) {
+    $("form").submit(event=> {
         event.preventDefault()
         
-        let formData = {
+        const formData = {
             firstname: $('#firstname').val(),
             lastname: $('#lastname').val(),
             email: $('#email').val(),
@@ -34,24 +34,27 @@ $(document).ready(function () {
             data: JSON.stringify(formData),
             dataType: "json",
             contentType: "application/json;charset=utf-8",
-            
+            beforeSend: ()=> {
+                $(".error-display").hide();
+            },
             success: data => {
-                    $("form").reset();
+                    $("#registrationForm")[0].reset();
                     alert("customer data stored successfully");
                     return true
             },
             error: data => {
-                    var errorData = JSON.parse(data.responseText);   
+                    const errorData = JSON.parse(data.responseText); 
+                    let errElementSelctor = '';
                     if(errorData.field){    // Displays the field duplicate error if email or phone number are already present in DB
-                        var errElementSelctor = '#' + errorData.field + 'Error'
+                        errElementSelctor = '#' + errorData.field + 'Error'
                         if (errorData.field === 'email' || errorData.field === 'mobile') {
                             $(errElementSelctor).show();
                             $(errElementSelctor).html(errorData.error);    
                         }
                         return false
                     }else{              
-                        errorData.forEach(error => { // Displays validation error returned from server 
-                            var errElementSelctor = '#' + error.param + 'Error'
+                            errorData.forEach(error => { // Displays validation error returned from server 
+                            errElementSelctor = '#' + error.param + 'Error'
                             $(errElementSelctor).show();
                             $(errElementSelctor).html(error.msg);
                         })

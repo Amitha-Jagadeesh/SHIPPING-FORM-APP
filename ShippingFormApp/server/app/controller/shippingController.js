@@ -37,7 +37,7 @@ router.post('/',
         .not().isEmpty().withMessage(`${fieldEmptyError}`).bail()
         .isLength({ min: 3 }).withMessage(`${fieldMinLengthError}`).bail(),
 
-    function (req, res) {
+    (req, res)=> {
         const errors = validationResult(req); 
 
         if (!errors.isEmpty()) {
