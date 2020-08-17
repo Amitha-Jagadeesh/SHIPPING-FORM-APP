@@ -1,15 +1,13 @@
-# developer-task_amitha
+# developer-task_amitha<br/>
 
-Installation and  build instructions  at server side and client side
+Install mongod by following instructions on this page https://docs.mongodb.com/manual/administration/install-community/ <br/>
 
-Initially Run  npm init in the terminal to create a package.json file for developer-task application
+Installation and build instructions at server side and client side<br/>
+Open Terminal, change directory to server directory i.e <YOUR_WORKING_DIRECTORY>/ShippingFormApp/server<br/>
+Run following commands in given order:<br/>
+npm init<br/>
+npm install express mongoose validator express-validator cors --save<br/>
+node index.js<br/>
 
-Install express framework npm install —save express
-Install mongoose library  using  npm install mongoose —save
-Install mongod for storing data in mongodb  using brew
-Install validator library using  npm install validator —save
-Install express-validator module using  npm install express-validator —save
-Install cors library using npm install —save cors
-To start the server , run “node index.js” 
+open <YOUR_WORKING_DIRECTORY>/ShippingFormApp/client/view/shippingForm.html<br/>
 
-Give the html path to Run html file in the browser
