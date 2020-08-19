@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,12 +13,12 @@
     <script type="text/javascript"
         src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>
     <script src="../js/dropdown/jquery.dd.min.js"></script>
-    <script src = "../dist/bundle.js"></script>
+    <script src="../dist/bundle.js"></script>
 
 </head>
 
 <body>
-    <div class="container"><br><br>
+    <div class="container-liquid"><br><br>
 
         <!-- header section -->
         <div class="flex-container">
@@ -58,9 +59,10 @@
         <!-- ----------------------- -->
 
         <!-- Shipping form Grid section -->
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-12">
-                <form id="registrationForm">
+        <form id="registrationForm">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-12">
+
                     <div class="form-group required border-class">
 
                         <div class="header">
@@ -76,34 +78,43 @@
                         <div class="form-fields">
                             <h6>Required Fields</h6><br>
 
-                            <div class="parent" style="display: flex;">
-                                <div class="form-group required col-sm-6 col-12 username">
+                            <div class="username">
+                                <div class="form-group required col-sm-6 col-12 firstname">
                                     <label class="form-control-label" for='firstname'> First Name</label><br>
                                     <input type='text' id='firstname' name='firstname' autocomplete="off" value=""
                                         class="form-control">
-                                        <!-- display error message if validation fails -->
-                                    <div class = "error-display" id="firstnameError"></div> 
+                                    <!-- display error message if validation fails -->
+                                    <div class="error-display" id="firstnameError"></div>
                                 </div>
 
-                                <div class="form-group required col-sm-6 col-12">
+                                <div class="form-group required col-sm-6 col-12 lastname">
                                     <label class="form-control-label" for='lastname'>Last Name</label><br>
-                                    <input type='text' id='lastname' name='lastname' value="" autocomplete="off" class="form-control">
-                                    <div class = "error-display" id="lastnameError"></div> 
+                                    <input type='text' id='lastname' name='lastname' value="" autocomplete="off"
+                                        class="form-control">
+                                    <div class="error-display" id="lastnameError"></div>
                                 </div>
                             </div>
 
                             <div class="form-group required">
                                 <label class="form-control-label" for='email'>Email Address</label><br>
-                                <input type='text' id='email' name='Email' value="" autocomplete="off" class="form-control">
-                                <div class = "error-display" id="emailError"></div> 
+                                <input type='text' id='email' name='Email' value="" autocomplete="off"
+                                    class="form-control">
+                                <div class="error-display" id="emailError"></div>
                             </div>
 
                             <div class="form-group required">
                                 <label class="form-control-label" for="countries">Shipping Country</label>
-                                <select class="form-control col-md-12 col-sm-12 col-12" name="countries" id="shippingCountry">
-                                    <option value='gb' data-image="https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/United-Kingdom-flag-icon.png">United Kingdom</option>
-                                    <option value='in' data-image="https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/India-Flag-icon.png">India</option>
-                                    <option value='us' data-image="https://icons.iconarchive.com/icons/wikipedia/flags/24/US-United-States-Flag-icon.png">USA</option>
+                                <select class="form-control col-md-12 col-sm-12 col-12" name="countries"
+                                    id="shippingCountry">
+                                    <option value='gb'
+                                        data-image="https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/United-Kingdom-flag-icon.png">
+                                        United Kingdom</option>
+                                    <option value='in'
+                                        data-image="https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/India-Flag-icon.png">
+                                        India</option>
+                                    <option value='us'
+                                        data-image="https://icons.iconarchive.com/icons/wikipedia/flags/24/US-United-States-Flag-icon.png">
+                                        USA</option>
                                 </select>
                             </div>
 
@@ -111,86 +122,98 @@
                                 <label class="form-control-label" for='mobile'>Phone Number <i
                                         class="fa fa-info-circle"></i> </label><br>
                                 <div class="form-inline">
-                                    <select id = "slick"class="form-control col-md-4 col-sm-4 col-4 mobile-section" name="countries" id="shippingCountry">
-                                        <option value='+44' data-description="uk" data-imagesrc = "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/United-Kingdom-flag-icon.png">+44</option>
-                                        <option value='+91' data-description="uk" data-imagesrc = "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/India-Flag-icon.png">+91</option>
-                                        <option value='+1' data-description="uk"  data-imagesrc = "https://icons.iconarchive.com/icons/wikipedia/flags/24/US-United-States-Flag-icon.png">+1</option>
+                                    <select id="slick" class="form-control col-md-4 col-sm-4 col-4 mobile-section"
+                                        name="countries" id="shippingCountry">
+                                        <option value='+44' data-description="uk"
+                                            data-imagesrc="https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/United-Kingdom-flag-icon.png">
+                                            +44</option>
+                                        <option value='+91' data-description="uk"
+                                            data-imagesrc="https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/24/India-Flag-icon.png">
+                                            +91</option>
+                                        <option value='+1' data-description="uk"
+                                            data-imagesrc="https://icons.iconarchive.com/icons/wikipedia/flags/24/US-United-States-Flag-icon.png">
+                                            +1</option>
                                     </select>
                                     <input type='text' id='mobile' name='mobileNumber' maxlength="10"
-                                        class="form-control col-md-8 col-sm-8 col-8" value="" autocomplete="off">
-                                    <div class = "error-display" id="mobileError"></div>
+                                        class="form-control col-md-9 col-sm-9 col-9" value="" autocomplete="off">
+                                    <div class="error-display" id="mobileError"></div>
                                 </div>
                             </div>
 
                             <div class="form-group required">
                                 <label class="form-control-label" for='addressline1'>Address Line1</label>
-                                <input type='text' id='addressLine1' name='addressline1' class="form-control" value="" autocomplete="off">
-                                <div class = "error-display" id="addressLine1Error"></div>
+                                <input type='text' id='addressLine1' name='addressline1' class="form-control" value=""
+                                    autocomplete="off">
+                                <div class="error-display" id="addressLine1Error"></div>
                             </div>
 
                             <div class="form-group">
                                 <label for='addressline2'>Address Line2</label>
-                                <input type='text' id='addressLine2' name='addressline2' class="form-control" value="" autocomplete="off">
+                                <input type='text' id='addressLine2' name='addressline2' class="form-control" value=""
+                                    autocomplete="off">
                             </div>
 
                             <div class="form-group required">
                                 <label class="form-control-label" for='postcode'>Postcode</label>
-                                <input type='text' id='postcode' name='postcode' class="form-control" value="" autocomplete="off">
+                                <input type='text' id='postcode' name='postcode' class="form-control" value=""
+                                    autocomplete="off">
                                 <span>e.g. E1 8RL</span>
-                                <div class = "error-display" id="postcodeError"></div>
+                                <div class="error-display" id="postcodeError"></div>
                             </div>
 
                             <div class="form-group required">
                                 <label class="form-control-label" for='city'>City/Town</label>
-                                <input type='text' id='city' name='city' class="form-control" value="" autocomplete="off">
-                                <div class = "error-display" id="cityError"></div>
+                                <input type='text' id='city' name='city' class="form-control" value=""
+                                    autocomplete="off">
+                                <div class="error-display" id="cityError"></div>
                             </div>
 
                         </div>
                     </div>
-                    <input type='submit' id="submit" value='CONTINUE TO PAYMENT>' class="btn btn-primary form-control">
-                </form>
-            </div>
 
-            <!-- shipping total section -->
-            <div class="col-md-6 col-sm-6 col-12">
-                <div class="border-class1">
-                    <div class="flex-container shipping-total">
-                        <div>
-                            <h6 class="float-left">Order Summery</h6>
+                </div>
+                <!-- shipping total section -->
+                <div class="col-md-6 col-sm-6 col-12">
+                    <div class="border-class1">
+                        <div class="flex-container shipping-total">
+                            <div>
+                                <h6 class="float-left">Order Summery</h6>
+                            </div>
+                            <h6 class="float-right">Edit</h6>
+                        </div><br>
+
+                        <div class="form-group required total">
+                            <ul>
+                                <li>
+                                    <div class="dot-div"></div>
+                                    <div class="text-div">
+                                        <span class="text-span">Subtotal</span>
+                                        <span class="text-span pull-right">€299.99</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dot-div"></div>
+                                    <div class="text-div">
+                                        <span class="text-span">Shipping</span>
+                                        <span class="text-span pull-right">Free</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dot-div"></div>
+                                    <div class="text-div">
+                                        <span class="text-span">Total</span>
+                                        <span class="text-span pull-right">€299.99</span>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <h6 class="float-right">Edit</h6>
-                    </div><br>
-
-                    <div class="form-group required total">
-                        <ul>
-                            <li>
-                                <div class="dot-div"></div>
-                                <div class="text-div">
-                                    <span class="text-span">Subtotal</span>
-                                    <span class="text-span pull-right">€299.99</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dot-div"></div>
-                                <div class="text-div">
-                                    <span class="text-span">Shipping</span>
-                                    <span class="text-span pull-right">Free</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dot-div"></div>
-                                <div class="text-div">
-                                    <span class="text-span">Total</span>
-                                    <span class="text-span pull-right">€299.99</span>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-            <!-- -->
-        </div>
+                <!-- -->
+                <input type='submit' id="submit" value='CONTINUE TO PAYMENT>'
+                    class="mb-sm-4 btn btn-primary form-control">
+        </form>
+    </div>
     </div><br>
 
     <!-- footer section -->

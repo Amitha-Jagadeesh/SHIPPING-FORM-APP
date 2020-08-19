@@ -92,7 +92,6 @@ var _this = this;
 
 $(document).ready(function () {
   $("#slick").ddslick({
-    width: "33%",
     imagePosition: "left"
   });
   $("#shippingCountry").msDropdown();

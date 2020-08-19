@@ -9,7 +9,15 @@
     .text-left{
         margin-top: 0px;
     }
-
+    
+    #registrationForm {
+        width: 100%;
+        padding-right: 15px; 
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
     .flex-container{
         display: flex;
         justify-content: space-around ;
@@ -44,15 +52,28 @@
         content:"*";
         color:initial;
     }
-
-    .parent .username{
+    .username{
+        display: flex;
+    }
+    .username .firstname{
         margin-right: 2px;
+        padding:0 6px 0 0;
+    }
+
+    .lastname{
+        padding:0 3px 0 3px;
+    }
+
+    #slick{
+        width:25% !important;
+        padding-right:8px ;
+
     }
 
     .border-class{
         border: 1px solid #ececec;
         border-radius: 2px;
-        margin:20px;
+        margin-left: 1px;
     }
 
     #heading{
@@ -61,9 +82,12 @@
         text-transform: uppercase;
     }
 
+    .username{
+        display: flex;
+    }
+
     .btn-primary{
-        margin-left: 20px;
-        width:93%;
+        width:50%;
     }
 
     .header{
@@ -104,7 +128,6 @@
     .border-class1{
         border: 1px solid #ececec;
         border-radius: 2px;
-        margin-top: 20px;
         margin-left: 20px;
         width: -webkit-fill-available !important;
         margin-right: 20px;
@@ -163,6 +186,10 @@
     #mobile{
         height:42px;
     }
+
+    .ddlabel{
+        margin-left: 10px;
+    }
     
     .dd-selected{
         color:rgb(54, 53, 53);
@@ -182,6 +209,7 @@
     }
     .dd-select{
         width:100%!important;
+        border-radius: 3px !important;
     }
     .dd-options{
         width:100%!important;
@@ -218,6 +246,13 @@
         font-size: 80%;
         color:#a60000;
     }
+
+
+    @media (min-width: 1140px){
+        #registrationForm {
+            max-width: 1140px;
+        }
+    }
    
     @media only screen and (max-width : 1140px) and (min-width: 769px){
 
@@ -228,6 +263,10 @@
         .footer .flex-container p{
             font-size: 10px;
         }
+
+        .dd-selected-text{
+            font-size: 12px;
+        }
         
     }
 
@@ -236,6 +275,7 @@
         #mobileError{
             margin-left: 50px;
         }
+
     }
     
 
@@ -249,6 +289,7 @@
         .text-left{
             font-size: 14px;
         }
+
         #mobileError{
             margin-left: 0px;
         }
@@ -259,10 +300,6 @@
 
         .flex-container1 h6{
             font-size: 14px;
-        }
-        
-        form{
-            width:300px;
         }
 
         .footer .flex-container p{
@@ -276,22 +313,38 @@
         .right-footer-section{
             margin-left: 40px;
         }
+
+        .ddlabel{
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
         .dd-selected{
             padding:0px !important;
             font-size: 10px !important;
         }
+
         .dd-selected-text{
             font-size: 10px;
+            margin-top: 12px !important;
+        }
+
+        .dd-selected-image{
+            margin-top: 12px !important;
         }
        
     }
-    
+
     @media only screen and (max-width: 575px){
         
-        .parent{
+        .username{
             display: grid !important;
         }
-        
+
+        .firstname{
+            margin-left: 5px;
+        }
+
         .left-footer-section{
             width: 50%;
             margin-left: 20px;
@@ -306,12 +359,22 @@
         .footer .flex-container p{
             font-size: 8px;
         }
+
         .text-left{
             font-size: 14px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
+        
         .flex-container1 h6{
             font-size: 14px;
+        }
+
+        .dd-selected-image{
+            margin-top: 5px;
+        }
+
+        .dd-selected-text{
+            margin-top: 5px;
         }
         
         .flex-container1{
@@ -321,6 +384,19 @@
 
         .dd-selected{
             padding:5px !important;
+        }
+
+        .border-class{
+            margin-right: 1px;
+        }
+
+        .border-class1{
+            margin: 5px 2px 0 2px !important;
+        }
+
+        .btn-primary{
+            width:100%;
+            margin: 10px 0 0 1px;
         }
     }
     

@@ -2,7 +2,6 @@
 $(document).ready(()=> {
 
     $("#slick").ddslick({
-        width: "33%",
         imagePosition: "left",
     });
 
